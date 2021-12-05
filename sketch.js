@@ -1,4 +1,9 @@
 let ball;
+let ping;
+
+function preload() {
+  ping = loadImage('ping.png');
+}
 
 function setup(){
   createCanvas(600, 600);
@@ -6,15 +11,17 @@ function setup(){
 }
 
 function draw(){
-  background(51);
-  
+  background(15);
+  image(ping, 0, 0);
+
   let gravity = createVector(0, 0.1);
   ball.applyForce(gravity);
-  
-  
+
+
   ball.update();
   ball.display();
   ball.edges();
+
 }
 
 class Ball{
@@ -24,16 +31,16 @@ class Ball{
     this.acc = createVector(0, 0);
     this.r = 80;
   }
-  
+
   applyForce(force){
     this.acc = force;
   }
-  
+
   update(){
     this.vel.add(this.acc);
     this.pos.add(this.vel);
   }
-  
+
   edges(){
     if (this.pos.y > height - this.r){
       this.vel.y *= -1;
@@ -45,5 +52,5 @@ class Ball{
     fill(255);
     ellipse(this.pos.x, this.pos.y, this.r, this.r);
   }
-  
+
 }
