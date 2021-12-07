@@ -2,6 +2,7 @@ let ball;
 let ping;
 let pong;
 let bg;
+let IsBouncing;
 
 function preload() {
   ping = loadImage('ping.png');
@@ -15,10 +16,14 @@ function setup(){
 }
 
 function draw(){
-  addpingpong();
-  background(bg);
 
-  console.log(bg);
+  background(bg);
+  // addpingpong();
+
+  console.log(IsBouncing);
+
+  // console.log(bg);
+  // console.log(ball.pos.y);
 
   let gravity = createVector(0, 0.1);
   ball.applyForce(gravity);
@@ -26,18 +31,25 @@ function draw(){
 
   ball.update();
   ball.display(255);
-  ball.edges();
+  IsBouncing = ball.edges();
+
+  if (IsBouncing == true && bg == 255){
+    bg = 15;
+  }
+  else if (IsBouncing == true && bg == 15){
+    bg = 255;
+  }
 
 }
 
 function addpingpong(){
-  if (ball.pos.y >= 520 && bg == 15){
-    bg = 255;
-    image(pong, 0, 0);
-  }
-  else if (ball.pos.y >= 510 && bg == 255){
+  if (ball.pos.y >= 519 && bg == 255){
     bg = 15;
-    image(ping, 0, 0);
+    // image(ping, 0, 0);
+  }
+  else if (ball.pos.y >= 519 && bg == 15){
+    bg = 255;
+    // image(pong, 0, 0);
   }
 }
 
@@ -62,8 +74,10 @@ class Ball{
   edges(){
     if (this.pos.y > height - this.r){
       this.vel.y *= -1;
-      this.pos.y = height - this.r;
+      this.pos.y = 519; // = 520
+      return true;
     }
+    else return false;
   }
 
   display(c){
