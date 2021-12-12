@@ -1,16 +1,19 @@
 let ball;
-let ping;
-let pong;
+let tt = 'PING';
+let untitledsans;
+let textfill = 255;
 let bg;
 let IsBouncing;
 
 function preload() {
-  ping = loadImage('ping.png');
-  pong = loadImage('pong.png');
+  untitledsans = loadFont("TestUntitledSans-Black.otf")
 }
 
 function setup(){
   createCanvas(600, 600);
+  textFont(untitledsans);
+  textSize(150);
+  textAlign(CENTER);
   ball = new Ball();
   bg = 15;
 }
@@ -18,8 +21,6 @@ function setup(){
 function draw(){
 
   background(bg);
-
-  console.log(IsBouncing);
 
   let gravity = createVector(0, 0.1);
   ball.applyForce(gravity);
@@ -29,13 +30,20 @@ function draw(){
   ball.display(255);
   IsBouncing = ball.edges();
 
+  fill(textfill);
+  text(tt, width/2, 200);
+
+
   if (IsBouncing == true && bg == 255){
     bg = 15;
-    image(ping, 0, 0);
+    tt = 'PONG';
+    textfill = 255;
+
   }
   else if (IsBouncing == true && bg == 15){
     bg = 255;
-     image(pong, 0, 0);
+    tt = 'PING';
+    textfill = 15;
   }
 }
 
