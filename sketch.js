@@ -37,6 +37,8 @@ function draw(){
   ball.display(bc);
   IsBouncing = ball.edges();
 
+  bouncesound.setVolume(0.3);
+
   fill(textfill);
   text(tt, width/2, 200);
 
