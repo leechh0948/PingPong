@@ -18,12 +18,8 @@ function setup(){
 function draw(){
 
   background(bg);
-  // addpingpong();
 
   console.log(IsBouncing);
-
-  // console.log(bg);
-  // console.log(ball.pos.y);
 
   let gravity = createVector(0, 0.1);
   ball.applyForce(gravity);
@@ -35,21 +31,11 @@ function draw(){
 
   if (IsBouncing == true && bg == 255){
     bg = 15;
+    image(ping, 0, 0);
   }
   else if (IsBouncing == true && bg == 15){
     bg = 255;
-  }
-
-}
-
-function addpingpong(){
-  if (ball.pos.y >= 519 && bg == 255){
-    bg = 15;
-    // image(ping, 0, 0);
-  }
-  else if (ball.pos.y >= 519 && bg == 15){
-    bg = 255;
-    // image(pong, 0, 0);
+     image(pong, 0, 0);
   }
 }
 
