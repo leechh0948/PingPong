@@ -5,9 +5,16 @@ let textfill = 255;
 let bg = 15;
 let IsBouncing;
 let bc = 255;
+let pingsound;
+let pongsound;
+let bouncesound;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
+  soundFormats('mp3');
+  pingsound = loadSound('ping.mp3');
+  pongsound = loadSound('pong.mp3');
+  bouncesound = loadSound('bounce.mp3');
 }
 
 function setup(){
@@ -39,13 +46,16 @@ function draw(){
     tt = 'PONG';
     textfill = 255;
     bc = 255;
-
+    pongsound.play();
+    bouncesound.play();
   }
   else if (IsBouncing == true && bg == 15){
     bg = 255;
     tt = 'PING';
     textfill = 15;
     bc = 15;
+    pingsound.play();
+    bouncesound.play();
   }
 }
 
