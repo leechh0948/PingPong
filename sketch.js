@@ -2,8 +2,9 @@ let ball;
 let tt = 'PING';
 let untitledsans;
 let textfill = 255;
-let bg;
+let bg = 15;
 let IsBouncing;
+let bc = 255;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
@@ -15,7 +16,6 @@ function setup(){
   textSize(150);
   textAlign(CENTER);
   ball = new Ball();
-  bg = 15;
 }
 
 function draw(){
@@ -27,7 +27,7 @@ function draw(){
 
 
   ball.update();
-  ball.display(255);
+  ball.display(bc);
   IsBouncing = ball.edges();
 
   fill(textfill);
@@ -38,12 +38,14 @@ function draw(){
     bg = 15;
     tt = 'PONG';
     textfill = 255;
+    bc = 255;
 
   }
   else if (IsBouncing == true && bg == 15){
     bg = 255;
     tt = 'PING';
     textfill = 15;
+    bc = 15;
   }
 }
 
