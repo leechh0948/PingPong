@@ -1,5 +1,5 @@
 let ball;
-let tt = 'PING';
+let tt = 'GRAVITY';
 let untitledsans;
 let textfill = 255;
 let bg = 15;
@@ -26,7 +26,7 @@ function setup(){
   slider.style('width', '570px');
 
   textFont(untitledsans);
-  textSize(150);
+  textSize(100);
   textAlign(CENTER);
   ball = new Ball();
 }
@@ -51,18 +51,16 @@ function draw(){
 
   if (IsBouncing == true && bg == 255){
     bg = 15;
-    tt = 'PONG';
+    tt = 'GRAVITY';
     textfill = 255;
     bc = 255;
-    pongsound.play();
     bouncesound.play();
   }
   else if (IsBouncing == true && bg == 15){
     bg = 255;
-    tt = 'PING';
+    tt = 'TIME';
     textfill = 15;
     bc = 15;
-    pingsound.play();
     bouncesound.play();
   }
 }
