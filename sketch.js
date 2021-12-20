@@ -5,8 +5,6 @@ let textfill = 255;
 let bg = 15;
 let IsBouncing;
 let bc = 255;
-let pingsound;
-let pongsound;
 let bouncesound;
 let slider;
 let grain;
@@ -14,8 +12,6 @@ let grain;
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
   soundFormats('mp3');
-  pingsound = loadSound('ping.mp3');
-  pongsound = loadSound('pong.mp3');
   bouncesound = loadSound('bounce.mp3');
 
 }
