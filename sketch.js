@@ -26,6 +26,7 @@ function setup(){
   vid = createVideo('grain.mp4')
   vid.loop();
   vid.volume(0);
+  vid.hide();
 
   slider = createSlider(0.05, 0.5, 0.09, 0.01);
   slider.position(10, 10);
@@ -40,6 +41,10 @@ function setup(){
 function draw(){
 
   background(bg);
+
+  vid.filter(INVERT);
+  image(vid, 0, 0);
+
 
   let gravity = createVector(0, slider.value());
   ball.applyForce(gravity);
@@ -58,6 +63,7 @@ function draw(){
   if (IsBouncing == true && bg == 255){
     bg = 15;
     tt = 'GRAVITY';
+
     textfill = 255;
     bc = 255;
     bouncesound.play();
