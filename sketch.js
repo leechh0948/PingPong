@@ -23,10 +23,10 @@ function preload() {
 function setup(){
   createCanvas(1920, 700);
 
-  vid = createVideo('grain.mp4')
-  vid.loop();
-  vid.volume(0);
-  vid.hide();
+  // vid = createVideo('grain.mp4')
+  // vid.loop();
+  // vid.volume(0);
+  // vid.hide();
 
   slider = createSlider(0.05, 0.5, 0.09, 0.01);
   slider.position(10, 10);
@@ -42,7 +42,7 @@ function draw(){
 
   background(bg);
 
-  image(vid, 0, 0);
+  // image(vid, 0, 0);
 
 
   let gravity = createVector(0, slider.value());
