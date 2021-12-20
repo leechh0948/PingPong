@@ -8,6 +8,7 @@ let bc = 255;
 let pingsound;
 let pongsound;
 let bouncesound;
+let slider;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
@@ -19,6 +20,11 @@ function preload() {
 
 function setup(){
   createCanvas(600, 600);
+
+  slider = createSlider(0, 255, 100);
+  slider.position(10, 10);
+  slider.style('width', '500px');
+  
   textFont(untitledsans);
   textSize(150);
   textAlign(CENTER);
