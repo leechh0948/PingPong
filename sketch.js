@@ -21,10 +21,10 @@ function preload() {
 function setup(){
   createCanvas(600, 600);
 
-  slider = createSlider(0, 255, 100);
+  slider = createSlider(0.05, 0.5, 0.1, 0.01);
   slider.position(10, 10);
-  slider.style('width', '500px');
-  
+  slider.style('width', '570px');
+
   textFont(untitledsans);
   textSize(150);
   textAlign(CENTER);
@@ -35,7 +35,7 @@ function draw(){
 
   background(bg);
 
-  let gravity = createVector(0, 0.1);
+  let gravity = createVector(0, slider.value());
   ball.applyForce(gravity);
 
 
