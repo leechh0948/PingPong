@@ -16,12 +16,13 @@ function preload() {
   pingsound = loadSound('ping.mp3');
   pongsound = loadSound('pong.mp3');
   bouncesound = loadSound('bounce.mp3');
+
 }
 
 function setup(){
   createCanvas(600, 600);
 
-  slider = createSlider(0.05, 0.5, 0.1, 0.01);
+  slider = createSlider(0.05, 0.5, 0.09, 0.01);
   slider.position(10, 10);
   slider.style('width', '570px');
 
