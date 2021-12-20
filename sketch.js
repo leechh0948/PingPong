@@ -9,7 +9,8 @@ let pingsound;
 let pongsound;
 let bouncesound;
 let slider;
-let vid;
+let grainb;
+let grainw;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
@@ -23,10 +24,11 @@ function preload() {
 function setup(){
   createCanvas(1920, 700);
 
-  // vid = createVideo('grain.mp4')
-  // vid.loop();
-  // vid.volume(0);
-  // vid.hide();
+  grain = createVideo('grainblack.mp4')
+  grain.loop();
+  grain.volume(0);
+  grain.hide();
+
 
   slider = createSlider(0.05, 0.5, 0.09, 0.01);
   slider.position(10, 10);
@@ -42,7 +44,7 @@ function draw(){
 
   background(bg);
 
-  // image(vid, 0, 0);
+  image(grain, 0, 0);
 
 
   let gravity = createVector(0, slider.value());
@@ -62,9 +64,14 @@ function draw(){
   if (IsBouncing == true && bg == 255){
     bg = 15;
     tt = 'GRAVITY';
-
     textfill = 255;
     bc = 255;
+
+    grain = createVideo('grainblack.mp4')
+    grain.loop();
+    grain.volume(0);
+    grain.hide();
+
     bouncesound.play();
   }
   else if (IsBouncing == true && bg == 15){
@@ -72,6 +79,12 @@ function draw(){
     tt = 'TIME';
     textfill = 15;
     bc = 15;
+
+    grain = createVideo('grainwhite.mp4')
+    grain.loop();
+    grain.volume(0);
+    grain.hide();
+
     bouncesound.play();
   }
 }
