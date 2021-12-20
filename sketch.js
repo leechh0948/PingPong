@@ -9,6 +9,7 @@ let pingsound;
 let pongsound;
 let bouncesound;
 let slider;
+let vid;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
@@ -21,6 +22,10 @@ function preload() {
 
 function setup(){
   createCanvas(600, 600);
+
+  vid = createVideo('grain.mp4')
+  vid.loop();
+  vid.volume(0);
 
   slider = createSlider(0.05, 0.5, 0.09, 0.01);
   slider.position(10, 10);
