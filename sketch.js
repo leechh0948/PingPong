@@ -1,5 +1,5 @@
 let ball;
-let tt = 'GRAVITY';
+let tt = 'GRAVITY IS';
 let untitledsans;
 let textfill = 255;
 let bg = 15;
@@ -25,8 +25,8 @@ function setup(){
   grain.hide();
 
 
-  slider = createSlider(0.05, 0.5, 0.09, 0.01);
-  slider.position(10, 10);
+  slider = createSlider(0.05, 0.5, 0.105, 0.01);
+  slider.position(10, 180);
   slider.style('width', '570px');
 
   textFont(untitledsans);
@@ -58,7 +58,7 @@ function draw(){
 
   if (IsBouncing == true && bg == 255){
     bg = 15;
-    tt = 'GRAVITY';
+    tt = 'GRAVITY IS';
     textfill = 255;
     bc = 255;
 
