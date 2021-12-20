@@ -9,8 +9,7 @@ let pingsound;
 let pongsound;
 let bouncesound;
 let slider;
-let grainb;
-let grainw;
+let grain;
 
 function preload() {
   untitledsans = loadFont("TestUntitledSans-Black.otf")
