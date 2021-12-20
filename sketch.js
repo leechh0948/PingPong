@@ -21,7 +21,7 @@ function preload() {
 }
 
 function setup(){
-  createCanvas(600, 600);
+  createCanvas(1920, 700);
 
   vid = createVideo('grain.mp4')
   vid.loop();
@@ -42,7 +42,6 @@ function draw(){
 
   background(bg);
 
-  vid.filter(INVERT);
   image(vid, 0, 0);
 
 
@@ -98,7 +97,7 @@ class Ball{
   edges(){
     if (this.pos.y > height - this.r){
       this.vel.y *= -1;
-      this.pos.y = 519; // = 520
+      this.pos.y = height - this.r; // = 520
       return true;
     }
     else return false;
